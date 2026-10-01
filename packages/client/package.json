@@ -1,0 +1,30 @@
+{
+  "name": "@oorable/captcha-client",
+  "version": "0.1.0",
+  "description": "Small fetch-based client for the OORABLE CAPTCHA REST API. Works in browsers, Node 18+, Deno, Bun and React Native.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ../../scripts/fix-declaration-extensions.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@oorable/captcha": "^0.1.0",
+    "@oorable/captcha-server": "^0.1.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

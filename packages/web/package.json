@@ -1,0 +1,35 @@
+{
+  "name": "@oorable/captcha-web",
+  "version": "0.1.0",
+  "description": "Framework-independent OORABLE CAPTCHA widget: interactive meme puzzle, text and image challenges. Accessible, themeable, no runtime dependencies beyond the tiny API client.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./script": "./dist/oorable-captcha.min.js"
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ../../scripts/fix-declaration-extensions.mjs dist && npm run bundle",
+    "bundle": "esbuild src/global.ts --bundle --format=iife --target=es2020 --outfile=dist/oorable-captcha.js && esbuild src/global.ts --bundle --minify --format=iife --target=es2020 --outfile=dist/oorable-captcha.min.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@oorable/captcha-client": "^0.1.0"
+  },
+  "devDependencies": {
+    "@oorable/captcha": "^0.1.0",
+    "@oorable/captcha-server": "^0.1.0",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.0",
+    "playwright": "^1.56.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

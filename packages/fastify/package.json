@@ -1,0 +1,32 @@
+{
+  "name": "@oorable/captcha-fastify",
+  "version": "0.1.0",
+  "description": "Fastify plugin for OORABLE CAPTCHA -- mounts the same REST API as @oorable/captcha-server onto a Fastify instance.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ../../scripts/fix-declaration-extensions.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "fastify": ">=4"
+  },
+  "dependencies": {
+    "@oorable/captcha-server": "^0.1.0"
+  },
+  "devDependencies": {
+    "@oorable/captcha": "^0.1.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

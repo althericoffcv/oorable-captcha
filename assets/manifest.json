@@ -1,0 +1,9 @@
+{
+  "sourceImages": [
+    { "id": "meme-1", "url": "https://raw.githubusercontent.com/althericoffcv/OORABLE/refs/heads/main/19110a75dc2d2724cb8cb9a7676f0e76.jpg?utm_source=chatgpt.com" },
+    { "id": "meme-2", "url": "https://raw.githubusercontent.com/althericoffcv/OORABLE/refs/heads/main/1d27d480cb340fc6b17f0fefb3db97d8.jpg?utm_source=chatgpt.com" },
+    { "id": "meme-3", "url": "https://raw.githubusercontent.com/althericoffcv/OORABLE/refs/heads/main/54e7ca35c608f8ebfbb7d60998d34b42.jpg?utm_source=chatgpt.com" },
+    { "id": "meme-4", "url": "https://raw.githubusercontent.com/althericoffcv/OORABLE/refs/heads/main/5c287944d7d07218339e507028c0b664.jpg?utm_source=chatgpt.com" }
+  ],
+  "note": "These are the four URLs supplied in the project brief. The build environment this repo was generated in has no network access, so they could not be fetched or inspected here -- run `npm run assets:setup` (downloads them) then `npm run assets:process` (requires `sharp`, slices each into 2x2/3x3/4x4 tiles) on a machine with network access. The tile-processing pipeline itself has been verified end-to-end against a synthetic stand-in image -- see docs/asset-management.md. Until you run the pipeline, the engine defaults to SyntheticAssetProvider, which procedurally generates placeholder puzzle art so the rest of the system is fully functional and tested."
+}

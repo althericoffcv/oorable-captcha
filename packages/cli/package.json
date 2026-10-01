@@ -1,0 +1,28 @@
+{
+  "name": "@oorable/captcha-cli",
+  "version": "0.1.0",
+  "description": "Command-line tools for OORABLE CAPTCHA: generate a signing secret, smoke-test challenge generation/verification, and check your environment.",
+  "type": "module",
+  "bin": {
+    "oorable-captcha": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ../../scripts/fix-declaration-extensions.mjs dist && chmod +x dist/cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@oorable/captcha": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}

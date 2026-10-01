@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OORABLE CAPTCHA demo</title>
+    <style>
+      body { font: 16px/1.5 system-ui, sans-serif; max-width: 480px; margin: 48px auto; padding: 0 16px; }
+      #result { margin-top: 16px; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <h1>OORABLE CAPTCHA demo</h1>
+    <form id="demo-form">
+      <div id="oorable-captcha"></div>
+      <p id="result"></p>
+      <button type="submit">Submit form</button>
+    </form>
+
+    <!-- In a real app, serve this from your CDN or your own static assets;
+         it's the built dist/oorable-captcha.js from @oorable/captcha-web. -->
+    <script src="/node_modules/@oorable/captcha-web/dist/oorable-captcha.js"></script>
+    <script>
+      OorableCaptcha.render("#oorable-captcha", {
+        siteKey: "demo-site-key",
+        type: "meme-puzzle",
+        onSuccess: () => {
+          document.getElementById("result").textContent = "Verified! (token is in the hidden form field)";
+        },
+      });
+
+      document.getElementById("demo-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const token = new FormData(e.target).get("oorable-captcha-token");
+        document.getElementById("result").textContent = token
+          ? `Would submit with token: ${token.slice(0, 16)}...`
+          : "Solve the puzzle first.";
+      });
+    </script>
+  </body>
+</html>

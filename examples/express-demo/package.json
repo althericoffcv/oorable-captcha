@@ -1,0 +1,16 @@
+{
+  "name": "oorable-captcha-express-demo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Minimal, copy-pasteable demo: an Express server serving the OORABLE CAPTCHA REST API plus a static page using the web widget. Not part of the npm workspaces build -- install its dependencies yourself.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@oorable/captcha": "^0.1.0",
+    "@oorable/captcha-express": "^0.1.0",
+    "@oorable/captcha-server": "^0.1.0",
+    "express": "^4.19.0"
+  }
+}

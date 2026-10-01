@@ -1,0 +1,39 @@
+{
+  "name": "@oorable/captcha-bot",
+  "version": "0.1.0",
+  "description": "Bot-oriented API for OORABLE CAPTCHA: framework-agnostic challenge creation/verification returning raw image bytes, ready to send as a chat attachment.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ../../scripts/fix-declaration-extensions.mjs dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@oorable/captcha": "^0.1.0"
+  },
+  "peerDependencies": {
+    "sharp": ">=0.33"
+  },
+  "peerDependenciesMeta": {
+    "sharp": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "sharp": "^0.35.5",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

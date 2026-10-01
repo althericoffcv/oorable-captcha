@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+assets/source/
+assets/processed/
+coverage/
+.DS_Store

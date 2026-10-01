@@ -1,0 +1,29 @@
+{
+  "name": "oorable-captcha",
+  "private": true,
+  "version": "0.1.0",
+  "description": "OORABLE CAPTCHA monorepo -- universal multi-platform CAPTCHA & anti-bot security engine",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types --test packages/core/test/*.test.ts",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint packages --ext .ts,.tsx",
+    "assets:setup": "node scripts/fetch-assets.mjs",
+    "assets:process": "node scripts/process-assets.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@oorable/captcha": "^0.1.0"
+  }
+}
